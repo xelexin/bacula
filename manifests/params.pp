@@ -10,6 +10,8 @@ class bacula::params {
       $storage_conf = '${conf_dir}/bacula-sd.conf',
       $client_conf = '${conf_dir}/bacula-fd.conf',
 
+      #packages
+      $director_package = 'bacula-director-mysql'
 
     }
     default: {
