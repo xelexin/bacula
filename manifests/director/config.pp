@@ -1,9 +1,9 @@
 # == Class: class_name
 #
 class bacula::director::config inherits bacula::director {
-  file { '${conf_dir}':
+  file { '${director_conf}':
     ensure  => file,
-    path => '${conf_dir}',
+    path => '${director_conf}',
     mode    => '0644',
     require => Class['bacula::director::install'],
     source  => 'puppet:///modules/bacula/conf/bacula-dir.conf',
