@@ -11,8 +11,11 @@ class bacula::params {
       $client_conf = '${conf_dir}/bacula-fd.conf',
 
       #packages
-      $director_package = 'bacula-director-mysql'
+      $director_package = 'bacula-director-mysql',
+      $storage_package = 'bacula-sd',
+      $client_package ='',
 
+      #
     }
     default: {
       fail:("Unsupported platform"),
