@@ -2,6 +2,7 @@
 #
 class bacula::director (
   $director_package = $bacula::params::director_package
+  $director_conf = $bacula::params::director_conf
 
 ) inherits bacula::params {
 
