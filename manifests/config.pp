@@ -15,7 +15,7 @@ class bacula::storage::config inherits bacula::storage {
   file { '$conf_sd':
     ensure  => file,
     mode    => '0644',
-    require => 'Class['bacula::stroage::install'],
+    require => Class['bacula::stroage::install'],
     source => 'puppet:///modules/xelexin-bacula/conf/bacula-sd.conf',
   }
 }
