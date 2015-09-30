@@ -5,7 +5,7 @@ class bacula::director::config inherits bacula::director {
     ensure  => file,
     mode    => '0644',
     require => Class['bacula::director::install'],
-    source  => 'puppet:///modules/xelexin-bacula/conf/bacula-dir.conf',
+    source  => 'puppet:///modules/bacula/conf/bacula-dir.conf',
   }
 }
 
@@ -16,6 +16,6 @@ class bacula::storage::config inherits bacula::storage {
     ensure  => file,
     mode    => '0644',
     require => Class['bacula::stroage::install'],
-    source => 'puppet:///modules/xelexin-bacula/conf/bacula-sd.conf',
+    source => 'puppet:///modules/bacula/conf/bacula-sd.conf',
   }
 }
