@@ -2,7 +2,7 @@
 class bacula::params {
 
   case $::osfamily {
-    'Ubuntu': {
+    'Ubuntu','Debian': {
 
       #config files
       $conf_dir = '/etc/bacula'
