@@ -6,7 +6,7 @@ class bacula::director (
 
 ) inherits bacula::params {
 
-
+    notify($director_conf)
     include bacula::director::install
     include bacula::director::config
     include bacula::director::service
