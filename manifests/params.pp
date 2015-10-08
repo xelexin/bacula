@@ -25,6 +25,7 @@ class bacula::params {
       $director_pid_dir = '/var/run'
       $director_max_jobs = '5'
       $director_messages_name = 'DirMessaages'
+      $director_logtofile = 'false'
 
     }
     default: {

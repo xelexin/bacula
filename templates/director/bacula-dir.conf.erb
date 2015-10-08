@@ -6,5 +6,15 @@ Director{
   Working Directory = <%= @director_work_dir %>
   PID Directory = <%= @director_pid_dir %>
   Maximum Concurrent Jobs = <%= @director_max_jobs %>
-  
+  <% if @director_logtofile == true %>
+  Messages = <%= @director_messages_name %>
+  <% end %>
 }
+
+<% if @director_logtofile == true %>
+Messages {
+  Name = <%= @director_messages_name %>
+  Console = all, !skipped, !saved
+  Append = "/var/log/bacula-dir.log" = all, !skipped, !saved
+}
+<% end %>
