@@ -1,4 +1,4 @@
-# == Class: class_name
+# == Class: bacula::director::config
 #
 class bacula::director::config inherits bacula::director {
   file { $director_conf:
@@ -6,11 +6,12 @@ class bacula::director::config inherits bacula::director {
     path => $director_conf,
     mode    => '0644',
     require => Class['bacula::director::install'],
-    source  => 'puppet:///modules/bacula/bacula-dir.conf',
+#    source  => 'puppet:///modules/bacula/bacula-dir.conf',
+    content => template('bacula/director/bacula-dir.conf.erb')
   }
 }
 
-# == Class: bacula::storage::config inherits bacula::storage
+# == Class: bacula::storage::config
 #
 class bacula::storage::config inherits bacula::storage {
   file { '$conf_sd':
