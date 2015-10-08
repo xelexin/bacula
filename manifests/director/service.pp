@@ -1,10 +1,10 @@
 class bacula::director::service inherits bacula::director {
-  service { 'bacula-dir':
+  service { 'bacula-director':
     ensure     => running,
     enable     => true,
     hasrestart => true,
     hasstatus  => true,
-    name       => 'bacula-dir',
+    name       => 'bacula-director',
     require => Class['bacula::director::install'],
   }
 }
