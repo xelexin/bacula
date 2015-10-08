@@ -3,7 +3,7 @@
 class bacula::director (
   $director_password,
 
-
+  $director_name = $bacula::params::director_name,
   $director_package = $bacula::params::director_package,
   $director_conf = $bacula::params::director_conf
 

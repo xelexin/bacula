@@ -4,6 +4,10 @@ class bacula::params {
   case $::osfamily {
     'Ubuntu','Debian': {
 
+      #names
+      $director_name = $::hostname,
+
+
       #config files
       $conf_dir = '/etc/bacula'
       $director_conf = "${conf_dir}/bacula-dir.conf"
