@@ -21,7 +21,6 @@ class bacula::params {
       #director params
       $director_name = $::hostname
       $director_address = 'localhost'
-      $director_port = 9101
       $director_work_dir = "/usr/local/bacula/var/bacula/working"
       $director_pid_dir = '/var/run'
       $director_max_jobs = '5'
