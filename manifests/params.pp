@@ -4,10 +4,6 @@ class bacula::params {
   case $::osfamily {
     'Ubuntu','Debian': {
 
-      #names
-      $director_name = $::hostname
-
-
       #config files
       $conf_dir = '/etc/bacula'
       $director_conf = "${conf_dir}/bacula-dir.conf"
@@ -19,7 +15,18 @@ class bacula::params {
       $storage_package = 'bacula-sd'
       $client_package =''
 
-      #
+      $director_port = 9101
+
+
+      #director params
+      $director_name = $::hostname
+      $director_address = 'localhost'
+      $director_port = 9101
+      $director_work_dir = "/usr/local/bacula/var/bacula/working"
+      $director_pid_dir = '/var/run'
+      $director_max_jobs = '5'
+      $director_messages_name = 'DirMessaages'
+
     }
     default: {
       fail("Unsupported platform")
