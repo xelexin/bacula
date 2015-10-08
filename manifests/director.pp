@@ -1,7 +1,7 @@
 # == Class: bacula::director
 #
 class bacula::director (
-  String $director_password,
+  $director_password,
 
 
   $director_package = $bacula::params::director_package,
