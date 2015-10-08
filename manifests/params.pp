@@ -5,7 +5,7 @@ class bacula::params {
     'Ubuntu','Debian': {
 
       #names
-      $director_name = ${::hostname},
+      $director_name = $::hostname
 
 
       #config files
