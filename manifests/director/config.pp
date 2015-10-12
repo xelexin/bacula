@@ -16,11 +16,11 @@ class bacula::director::config inherits bacula::director {
   }
 
 
-  concat { "/etc/puppet/modules/bacula/clients":
+  concat { "puppet:///modules/bacula/clients":
     owner => 'root',
     group => 'root',
     mode => '0644',
-    warn => 'true',
+    warn => true,
   }
 }
 define bacula::director::config::client_register($name){
