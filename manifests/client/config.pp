@@ -14,19 +14,30 @@ class bacula::client::config inherits bacula::client {
     content => template('bacula/client/bacula-fd.conf.erb')
   }
 
-  concat { 'puppet://modules/bacula/files/clients':
-    owner => 'root',
-    group => 'root',
-    mode => '0644',
-    ensure => 'present',
-    ensure_newline => true,
-  }
+//define bacula::client_register(){
+  $name = $client_name
 
-  concat::fragment { 'clients':
-    target => 'puppet://modules/bacula/files/clients',
-    mode => '0644',
-    content => template('bacula/client/client.erb'),
-    ensure => 'present',
+  concat::fragment{ "client_fragment_$name":
+    target => $director_conf,
+    order => '10',
+    content => templat('bacula/client/client.erb'),
   }
+//}
+
+
+  # concat { 'puppet://modules/bacula/files/clients':
+  #   owner => 'root',
+  #   group => 'root',
+  #   mode => '0644',
+  #   ensure => 'present',
+  #   ensure_newline => true,
+  # }
+  #
+  # concat::fragment { 'clients':
+  #   target => 'puppet://modules/bacula/files/clients',
+  #   mode => '0644',
+  #   content => template('bacula/client/client.erb'),
+  #   ensure => 'present',0
+  # }
 
 }
