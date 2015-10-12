@@ -1,23 +1,16 @@
 # == Class: bacula::director::config
 #
 class bacula::director::config inherits bacula::director {
-  file { $director_conf:
-    ensure  => file,
-    path => $director_conf,
-    mode    => '0644',
-    require => Class['bacula::director::install'],
-#    source  => 'puppet:///modules/bacula/bacula-dir.conf',
-    content => template('bacula/director/bacula-dir.conf.erb')
+  concat { $director_conf:
+    owner => 'root',
+    group => 'root',
+    mode => '0644',
   }
-}
 
-# == Class: bacula::storage::config
-#
-class bacula::storage::config inherits bacula::storage {
-  file { '$conf_sd':
-    ensure  => file,
+  concat::fragment { 'director_conf':
+    target  => $director_conf,
+    order   => '01',
     mode    => '0644',
-    require => Class['bacula::stroage::install'],
-    source => 'puppet:///modules/bacula/conf/bacula-sd.conf',
+    content => template('bacula/client/bacula-dir.conf.erb')
   }
 }
