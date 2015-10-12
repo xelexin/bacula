@@ -16,7 +16,7 @@ class bacula::director::config inherits bacula::director {
   }
 
 
-  concat { "puppet:///modules/bacula/files/clients":
+  concat { "puppet:///modules/bacula/clients":
     owner => 'root',
     group => 'root',
     mode => '0644',
@@ -24,7 +24,7 @@ class bacula::director::config inherits bacula::director {
 }
 define bacula::director::config::client_register($name){
   concat::fragment{ "dir_conf_fragment_$name" :
-    target => "puppet:///modules/bacula/files/clients",
+    target => "puppet:///modules/bacula/clients",
     order => '10',
     content => template('bacula/client/client.erb'),
   }
