@@ -5,6 +5,8 @@ class bacula::director::config inherits bacula::director {
     owner => 'root',
     group => 'root',
     mode => '0644',
+    backup_fragments => true,
+    ensure => 'present',
   }
 
   concat::fragment { 'director_conf':
