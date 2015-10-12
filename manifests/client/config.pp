@@ -14,10 +14,10 @@ class bacula::client::config inherits bacula::client {
     content => template('bacula/client/bacula-fd.conf.erb')
   }
 
-#define bacula::client_register(){
-  $name = $client_name
+#pdefine bacula::client_register(){
 
-  concat::fragment{ "client_fragment_$name":
+
+  concat::fragment{ "client_fragment_$client_name":
     target => $director_conf,
     order => '10',
     content => templat('bacula/client/client.erb'),
