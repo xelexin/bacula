@@ -1,0 +1,13 @@
+FileDaemon {
+        Name = <%= @client_name %>
+        FD Address = <%= @client_address %>
+        FD Port = <%= @client_port %>
+        Working Directory = <%= @client_work_dir %>
+        PID Directory = <%= @client_pid_dir %>
+        Maximum Concurrent Jobs = <%= @client_max_jobs %>
+}
+
+Director {
+        Name = <%= @director_name %>
+        Password = <%= @director_password %>
+}
