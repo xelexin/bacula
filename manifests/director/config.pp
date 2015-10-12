@@ -18,6 +18,6 @@ define bacula::director::config::client_register($name){
   concat::fragment{ "dir_conf_fragment_$name" :
     target => '/etc/bacula/bacula-dir.conf',
     order => '10',
-    source => template('bacula/client/client.erb'),
+    content => template('bacula/client/client.erb'),
   }
 }
