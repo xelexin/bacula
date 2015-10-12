@@ -18,12 +18,15 @@ class bacula::client::config inherits bacula::client {
     owner => 'root',
     group => 'root',
     mode => '0644',
+    ensure => 'present',
+    ensure_newline => 'true',
   }
 
   concat::fragment { 'clients':
     target => "$confdir/files/clients",
     mode => '0644',
     content => template('bacula/client/client.erb'),
+    ensure => 'present',
   }
 
 }
