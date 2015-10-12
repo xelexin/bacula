@@ -19,7 +19,7 @@ class bacula::client::config inherits bacula::client {
     group => 'root',
     mode => '0644',
     ensure => 'present',
-    ensure_newline => 'true',
+    ensure_newline => true,
   }
 
   concat::fragment { 'clients':
