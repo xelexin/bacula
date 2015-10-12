@@ -14,7 +14,7 @@ class bacula::director::config inherits bacula::director {
     content => template('bacula/director/bacula-dir.conf.erb')
   }
 
-  define bacula::client_register($name){
+  define bacula::director::client_register($name){
 
 
     concat::fragment{ "client_fragment_$name":
