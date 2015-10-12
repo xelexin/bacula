@@ -16,7 +16,7 @@ class bacula::director::config inherits bacula::director {
   }
 
 
-  concat { "puppet:///modules/bacula/files/clients"
+  concat { "puppet:///modules/bacula/files/clients":
     owner => 'root',
     group => 'root',
     mode => '0644',
