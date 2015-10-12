@@ -13,4 +13,17 @@ class bacula::client::config inherits bacula::client {
     mode    => '0644',
     content => template('bacula/client/bacula-fd.conf.erb')
   }
+
+  concat { 'files/clients':
+    owner => 'root',
+    group => 'root',
+    mode => '0644',
+  }
+
+  concat::fragment { 'clients':
+    target => 'files/clients',
+    mode => '0644',
+    content => template('bacula/client/client.erb'),
+  }
+
 }
