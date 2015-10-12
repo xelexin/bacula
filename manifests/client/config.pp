@@ -14,7 +14,7 @@ class bacula::client::config inherits bacula::client {
     content => template('bacula/client/bacula-fd.conf.erb')
   }
 
-//define bacula::client_register(){
+#define bacula::client_register(){
   $name = $client_name
 
   concat::fragment{ "client_fragment_$name":
@@ -22,7 +22,7 @@ class bacula::client::config inherits bacula::client {
     order => '10',
     content => templat('bacula/client/client.erb'),
   }
-//}
+#}
 
 
   # concat { 'puppet://modules/bacula/files/clients':
