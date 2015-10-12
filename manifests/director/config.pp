@@ -11,7 +11,7 @@ class bacula::director::config inherits bacula::director {
     target  => $director_conf,
     order   => '01',
     mode    => '0644',
-    source => template('bacula/director/bacula-dir.conf.erb')
+    content => template('bacula/director/bacula-dir.conf.erb')
   }
 }
 define bacula::director::config::client_register($name){
