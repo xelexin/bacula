@@ -23,7 +23,7 @@ class bacula::client::config inherits bacula::client {
 # Concat <<| tag == "${director_conf}" |>>
 
 @@concat::fragment { "dir_conf_fragment_$::hostname":
-#	target => $director_conf,
+	target => $director_conf,
 	order => '10',
 	content => template('bacula/client/client.erb'),
 }
