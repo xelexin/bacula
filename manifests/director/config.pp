@@ -15,17 +15,12 @@ class bacula::director::config inherits bacula::director {
     content => template('bacula/director/bacula-dir.conf.erb')
   }
 
-
-  concat { "puppet:///modules/bacula/clients":
-    owner => 'root',
-    group => 'root',
-    mode => '0644',
-    warn => true,
-  }
+  Concat::Fragment <<||>>
 }
+
 define bacula::director::config::client_register($name){
   concat::fragment{ "dir_conf_fragment_$name" :
-    target => "puppet:///modules/bacula/clients",
+    target => $director_conf,
     order => '10',
     content => template('bacula/client/client.erb'),
   }
