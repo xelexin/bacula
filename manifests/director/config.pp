@@ -17,11 +17,11 @@ class bacula::director::config inherits bacula::director {
 
   Concat::Fragment <<||>>
 
-  @@concat::fragment  { "test":
-  	target => "/etc/bacula/test",
-  	order => '10',
-  	content => $director_name,
-  }
+  # @@concat::fragment  { "test":
+  # 	target => "/etc/bacula/test",
+  # 	order => '10',
+  # 	content => $director_name,
+  # }
 
 }
 
