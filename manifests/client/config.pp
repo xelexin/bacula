@@ -13,33 +13,13 @@ class bacula::client::config inherits bacula::client {
     mode    => '0644',
     content => template('bacula/client/bacula-fd.conf.erb')
   }
-#  bacula::director::config::client_register{"$client_name":
- #   name => $client_name,
-  #}
 
-# @bacula::director::config::client_register{'dsa':
- #name => "lalala",
-#}
-# Concat <<| tag == "${director_conf}" |>>
 
 @@concat::fragment { "dir_conf_fragment_$::hostname":
 	target => $director_conf,
 	order => '10',
 	content => template('bacula/client/client.erb'),
 }
-  # concat { 'puppet://modules/bacula/files/clients':
-  #   owner => 'root',
-  #   group => 'root',
-  #   mode => '0644',
-  #   ensure => 'present',
-  #   ensure_newline => true,
-  # }
-  #
-  # concat::fragment { 'clients':
-  #   target => 'puppet://modules/bacula/files/clients',
-  #   mode => '0644',
-  #   content => template('bacula/client/client.erb'),
-  #   ensure => 'present',0
-  # }
+
 
 }
