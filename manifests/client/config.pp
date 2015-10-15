@@ -27,7 +27,7 @@ class bacula::client::config inherits bacula::client {
     content => 'testabscsdasf',
   }
 
-  Concat::Fragment <<| title == "test" |>>
+  Concat::Fragment <<| |>>
 
 
 
