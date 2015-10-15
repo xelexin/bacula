@@ -17,22 +17,29 @@ class bacula::params {
 
       $director_port = 9101
       $client_port = 9102
-
+      $storage_port = 9103
 
       #director params
       $director_name = "$::hostname-dir"
       $director_address = "$::ipaddress"
-      $director_work_dir = "/usr/local/bacula/var/bacula/working"
+      $director_work_dir = '/usr/local/bacula/var/bacula/working'
       $director_pid_dir = '/var/run'
       $director_max_jobs = '5'
       $director_messages_name = 'DirMessaages'
       $director_logtofile = 'false'
 
+      #storage params
+      $storage_name = "$::hostname-sd"
+      $storage_password = "$::generate_password"
+      $storage_address = "$::ipaddress"
+      $storage_work_dir = '/var/local/bacula/var/bacula/working'
+      $storage_pid_dir = '/var/run'
+
       #client params
       $client_name = "$::hostname-fd"
-      $client_password = "$::fd_password"
+      $client_password = "$::generate_password"
       $client_address = "$::ipaddress"
-      $client_work_dir = "/usr/local/bacula/var/bacula/working"
+      $client_work_dir = '/usr/local/bacula/var/bacula/working'
       $client_pid_dir = '/var/run'
       $client_max_jobs = '5'
 
