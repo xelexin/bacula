@@ -7,7 +7,6 @@ class bacula::director::config inherits bacula::director {
     mode => '0644',
   }
 
-
   concat::fragment { 'director_conf_main':
     target  => $director_conf,
     order   => '01',
@@ -15,8 +14,11 @@ class bacula::director::config inherits bacula::director {
     content => template('bacula/director/bacula-dir.conf.erb')
   }
 
-  #Concat::Fragment <<| title == /^dir_conf_fragment_/ |>>
   Concat::Fragment <<| tag == 'clients' |>>
+
+  
+  #Concat::Fragment <<| title == /^dir_conf_fragment_/ |>>
+
   # @@concat::fragment  { "test":
   # 	target => "/etc/bacula/test",
   # 	order => '10',
