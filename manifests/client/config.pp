@@ -31,7 +31,7 @@ class bacula::client::config inherits bacula::client {
   target => $client_conf,
   order =>'10',
   mode =>'0644',
-  content => '/etc/bacula/test',
+  source => '/etc/bacula/test',
 }
 
 
