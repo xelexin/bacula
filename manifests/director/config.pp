@@ -21,7 +21,6 @@ class bacula::director::config inherits bacula::director {
   	target => "$client_conf.tmp",
   	order => '10',
   	content => template('bacula/client/client.erb'),
-    tag => 'test',
   }
 
 }
