@@ -27,7 +27,12 @@ class bacula::client::config inherits bacula::client {
     content => "pierwsza linia",
   }
 
-
+  concat::fragment {'lalala':
+  target => $client_conf,
+  order =>'10',
+  mode =>'0644',
+  content => '/etc/bacula/test',
+}
 
 
 @@concat::fragment { "dir_conf_fragment_$::hostname":
