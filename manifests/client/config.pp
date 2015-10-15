@@ -18,11 +18,11 @@ class bacula::client::config inherits bacula::client {
 
 
 
-@@concat::fragment { "dir_conf_fragment_klient-fd":
+@@concat::fragment { "dir_conf_fragment_$::hostname":
 	target => $director_conf,
 	order => '10',
 	content => template('bacula/client/client.erb'),
-  tag => 'siema',
+  tag => 'clients',
 }
 
 
