@@ -14,6 +14,8 @@ class bacula::client::config inherits bacula::client {
     content => template('bacula/client/bacula-fd.conf.erb')
   }
 
+  Director_name <<||>>
+
 
 @@concat::fragment { "dir_conf_fragment_$::hostname":
 	target => $director_conf,
