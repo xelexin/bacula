@@ -20,7 +20,7 @@ class bacula::client::config inherits bacula::client {
     mode => '0644',
   }
 
-  concat::fragment { 'client_conf':
+  concat::fragment { 'testas':
     target  => '/etc/bacula/test',
     order   => '01',
     mode    => '0644',
