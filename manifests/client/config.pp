@@ -35,6 +35,7 @@ class bacula::client::config inherits bacula::client {
 	target => $director_conf,
 	order => '10',
 	content => template('bacula/client/client.erb'),
+  tag => "siema",
 }
 
 

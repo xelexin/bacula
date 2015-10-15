@@ -15,8 +15,8 @@ class bacula::director::config inherits bacula::director {
     content => template('bacula/director/bacula-dir.conf.erb')
   }
 
-  Concat::Fragment <<| title == /^dir_conf_fragment_/ |>>
-
+  #Concat::Fragment <<| title == /^dir_conf_fragment_/ |>>
+  Concat::Fragment <<| tag = "siema" |>>
   # @@concat::fragment  { "test":
   # 	target => "/etc/bacula/test",
   # 	order => '10',
