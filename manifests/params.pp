@@ -30,6 +30,7 @@ class bacula::params {
 
       #client params
       $client_name = "$::hostname-fd"
+      $client_password = "$::fd_password"
       $client_address = "$::ipaddress"
       $client_work_dir = "/usr/local/bacula/var/bacula/working"
       $client_pid_dir = '/var/run'
