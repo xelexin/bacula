@@ -14,27 +14,6 @@ class bacula::client::config inherits bacula::client {
     content => template('bacula/client/bacula-fd.conf.erb')
   }
 
-  concat { '/etc/bacula/test':
-    owner => 'root',
-    group => 'root',
-    mode => '0644',
-  }
-  concat::fragment { 'test123as':
-    target  => '/etc/bacula/test',
-    order   => '01',
-    mode    => '0644',
-    content => "pierwsza linia\n",
-  }
-
-  Concat::Fragment<<| tag == 'director_export' |>>
-
-  concat::fragment {'lalala':
-  target => $client_conf,
-  order =>'10',
-  mode =>'0644',
-  source => '/etc/bacula/test',
-}
-
 
 @@concat::fragment { "dir_conf_fragment_$::hostname":
 	target => $director_conf,

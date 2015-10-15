@@ -1,7 +1,7 @@
 # == Class: bacula::client
 #
 class bacula::client (
-  $director_password,
+  $director_name,
   $client_address = $bacula::params::client_address,
   $client_port = $bacula::params::client_port,
   $client_work_dir = $bacula::params::client_work_dir,

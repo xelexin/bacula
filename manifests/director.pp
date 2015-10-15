@@ -1,6 +1,7 @@
 # == Class: bacula::director
 #
 class bacula::director (
+  $director_name,
   $director_password,
   $director_logtofile = $bacula::params::director_logtofile,
   $director_address = $bacula::params::director_address,
@@ -9,7 +10,6 @@ class bacula::director (
   $director_pid_dir = $bacula::params::director_pid_dir,
   $director_max_jobs = $bacula::params::director_max_jobs,
 
-  $director_name = $bacula::params::director_name,
   $director_package = $bacula::params::director_package,
   $director_conf = $bacula::params::director_conf,
 
