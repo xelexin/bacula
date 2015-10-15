@@ -9,7 +9,7 @@ class bacula::director (
   $director_pid_dir = $bacula::params::director_pid_dir,
   $director_max_jobs = $bacula::params::director_max_jobs,
 
-  @@$director_name = $bacula::params::director_name,
+  $director_name = $bacula::params::director_name,
   $director_package = $bacula::params::director_package,
   $director_conf = $bacula::params::director_conf,
 
@@ -18,5 +18,6 @@ class bacula::director (
     include bacula::director::install
     include bacula::director::config
     include bacula::director::service
+
 
 }

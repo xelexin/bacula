@@ -14,7 +14,14 @@ class bacula::client::config inherits bacula::client {
     content => template('bacula/client/bacula-fd.conf.erb')
   }
 
-  Director_name <<||>>
+  concat { "$client_conf.tmp":
+    owner => 'root',
+    group => 'root',
+    mode => '0644',
+  }
+
+  Concat::Fragment <<| tag=="test" |>>
+
 
 
 @@concat::fragment { "dir_conf_fragment_$::hostname":
