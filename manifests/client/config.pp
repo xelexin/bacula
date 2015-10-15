@@ -20,7 +20,7 @@ class bacula::client::config inherits bacula::client {
     mode => '0644',
   }
 
-  Concat::Fragment <<| tittle=="test" |>>
+  Concat::Fragment <<| title=="test" |>>
 
 
 
