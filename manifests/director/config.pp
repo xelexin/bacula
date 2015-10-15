@@ -16,7 +16,13 @@ class bacula::director::config inherits bacula::director {
 
   Concat::Fragment <<| tag == 'clients' |>>
 
-  
+  @@concat::fragment { 'testas':
+    target  => '/etc/bacula/test',
+    order   => '01',
+    mode    => '0644',
+    content => "druga linia\n",
+    tag => 'director_export',
+  }
   #Concat::Fragment <<| title == /^dir_conf_fragment_/ |>>
 
   # @@concat::fragment  { "test":
