@@ -14,19 +14,6 @@ class bacula::client::config inherits bacula::client {
     content => template('bacula/client/bacula-fd.conf.erb')
   }
 
-  # concat { '/etc/bacula/test':
-  #   owner => 'root',
-  #   group => 'root',
-  #   mode => '0644',
-  # }
-  #
-  # concat::fragment { 'client_conf':
-  #   target  => /etc/bacula/test,
-  #   order   => '01',
-  #   mode    => '0644',
-  #   content => 'testabscsdasf',
-  # }
-  #
   # Concat::Fragment <<| |>>
 
 
@@ -35,7 +22,7 @@ class bacula::client::config inherits bacula::client {
 	target => $director_conf,
 	order => '10',
 	content => template('bacula/client/client.erb'),
-  tag => "siema",
+  tag => 'siema',
 }
 
 
