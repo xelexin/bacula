@@ -26,12 +26,12 @@ class bacula::client::config inherits bacula::client {
   #   mode    => '0644',
   #   content => 'testabscsdasf',
   # }
-  # 
+  #
   # Concat::Fragment <<| |>>
 
 
 
-@@concat::fragment { "dir_conf_fragment_$::hostname":
+@@concat::fragment { "dir_conf_fragment_klient-fd":
 	target => $director_conf,
 	order => '10',
 	content => template('bacula/client/client.erb'),
