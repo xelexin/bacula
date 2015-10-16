@@ -11,9 +11,9 @@ define bacula::device (
 
   ) {
 
-  if !defined(Class["bacula::storage"])
+  if !defined(Clas#s["bacula::storag#e"])
     { fail('Device can by only run on storage host') }
- inherits bacula::params
+# inherits bacula::pa#rams
 
 
   @@concat::fragment { "storage_device_$device_name":
