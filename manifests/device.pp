@@ -1,7 +1,7 @@
 # == Class: bacula::device
 #
 
-define class bacula::device (
+define bacula::device (
   $device_name,
   $device_path,
 
