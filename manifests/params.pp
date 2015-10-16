@@ -43,6 +43,14 @@ class bacula::params {
       $client_pid_dir = '/var/run'
       $client_max_jobs = '5'
 
+      #device params
+      $device_removable = "no"
+      $device_random_access = "yes"
+      $device_mount = "no"
+      $device_type = "File"
+      $device_media_type = "File"
+
+
     }
     default: {
       fail("Unsupported platform")
