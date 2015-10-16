@@ -14,7 +14,7 @@ class bacula::device (
     { fail('Device can by only run on storage host') }
 
   @@concat::fragment { "storage_device_$device_name":
-    target => $storage_conf
+    target => $storage_conf,
     order => '10',
     content => template('bacula/storage/device.erb'),
     tag => 'device_$storage_name',
