@@ -13,14 +13,14 @@ define bacula::device (
 
   if !defined(Class["bacula::storage"])
     { fail('Device can by only run on storage host') }
+ inherits bacula::params
 
-  
 
   @@concat::fragment { "storage_device_$device_name":
     target => $storage_conf,
     order => '10',
     content => template('bacula/storage/device.erb'),
-    tag => "device_$storage_name",
+    tag => $storage_name,
   }
 
 }
