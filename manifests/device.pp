@@ -9,9 +9,12 @@ define bacula::device (
   $device_removable = $bacula::params::device_removable,
   $device_mount = $bacula::params::device_mount,
 
-  ) inherits bacula::params {
+  ) {
+
   if !defined(Class["bacula::storage"])
     { fail('Device can by only run on storage host') }
+
+  
 
   @@concat::fragment { "storage_device_$device_name":
     target => $storage_conf,
