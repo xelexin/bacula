@@ -17,7 +17,7 @@ class bacula::storage::config inherits bacula::storage {
   @@concat::fragment { "dir_conf_fragment_$storage_name":
   	target => $director_conf,
   	order => '10',
-  	content => template('bacula/client/client.erb'),
+  	content => template('bacula/storage/storage.erb'),
     tag => 'clients',
   }
 
