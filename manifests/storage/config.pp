@@ -27,7 +27,7 @@ class bacula::storage::config inherits bacula::storage {
 define bacula::storage::device (
   $device_name,
   $device_path,
-
+  $storage_conf = $bacula::params::storage_conf,
   $device_random_access = $bacula::params::device_random_access,
   $device_removable = $bacula::params::device_removable,
   $device_mount = $bacula::params::device_mount,
@@ -36,7 +36,7 @@ define bacula::storage::device (
 
   if !defined(Class["bacula::storage"])
     { fail('Device can by only run on storage host') }
-# inherits bacula::pa#rams
+# inherits bacula::params
 
 
   @@concat::fragment { "storage_device_$device_name":
