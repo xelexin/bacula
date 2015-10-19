@@ -24,7 +24,7 @@ class bacula::storage::config inherits bacula::storage {
   Concat::Fragment <<| tag == $storage_name |>>
 
 }
-define bacula::storage::dodaj (
+define bacula::storage::device (
   $device_name,
   $device_path,
   $storage_name = $bacula::params::storage_name,
