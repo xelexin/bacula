@@ -17,7 +17,7 @@ define bacula::storage::device (
     target => $storage_conf,
     order => '10',
     content => template('bacula/storage/device.erb'),
-    tag => $storage_name,
+    tag => "device_$storage_name",
   }
 
 }

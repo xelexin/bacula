@@ -21,6 +21,6 @@ class bacula::storage::config inherits bacula::storage {
     tag => 'clients',
   }
 
-  Concat::Fragment <<| tag == $storage_name |>>
+  Concat::Fragment <<| tag == "device_$storage_name" |>>
 
 }
