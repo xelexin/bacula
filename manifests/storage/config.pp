@@ -27,7 +27,7 @@ class bacula::storage::config inherits bacula::storage {
 define bacula::storage::dodaj (
   $device_name,
   $device_path,
-  $storage_name,
+  $storage_name = $bacula::params::storage_name,
   $storage_conf = $bacula::params::storage_conf,
   $device_random_access = $bacula::params::device_random_access,
   $device_removable = $bacula::params::device_removable,
