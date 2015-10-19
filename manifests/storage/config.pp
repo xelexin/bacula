@@ -24,9 +24,10 @@ class bacula::storage::config inherits bacula::storage {
   Concat::Fragment <<| tag == $storage_name |>>
 
 }
-define bacula::storage::device (
+define bacula::storage::dodaj (
   $device_name,
   $device_path,
+  $storage_name,
   $storage_conf = $bacula::params::storage_conf,
   $device_random_access = $bacula::params::device_random_access,
   $device_removable = $bacula::params::device_removable,
@@ -39,7 +40,8 @@ define bacula::storage::device (
 # inherits bacula::params
 
 
-  @@concat::fragment { "storage_device_$device_name":
+  #@@concat::fragment { "storage_device_$device_name":
+  @@concat::fragment { "$device_name":
     target => $storage_conf,
     order => '10',
     content => template('bacula/storage/device.erb'),
