@@ -7,7 +7,7 @@ define bacula::storage::device (
   $device_removable = $bacula::params::device_removable,
   $device_mount = $bacula::params::device_mount,
   $device_type = $bacula::params::device_type,
-  $device_media_type = $bacula::params::device_media_type,[]
+  $device_media_type = $bacula::params::device_media_type,
   ) {
 
   if !defined(Class["bacula::storage"])
