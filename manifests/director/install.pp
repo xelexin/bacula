@@ -1,4 +1,4 @@
-# == Class: class_name
+# == Class: bacula::director::install
 #
 class bacula::director::install inherits bacula::director{
   package { 'bacula-director':
@@ -6,4 +6,5 @@ class bacula::director::install inherits bacula::director{
     name => $director_package,
     before => Class['bacula::director::config'],
   }
+
 }

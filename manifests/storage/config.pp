@@ -18,7 +18,7 @@ class bacula::storage::config inherits bacula::storage {
   	target => $director_conf,
   	order => '10',
   	content => template('bacula/storage/storage.erb'),
-    tag => 'clients',
+    tag => 'storage',
   }
 
   Concat::Fragment <<| tag == "device_$storage_name" |>>
