@@ -1,7 +1,7 @@
 define bacula::storage::device (
-  # $device_name,
-  # $device_path,
-  $device,
+  $device_name,
+  $device_path,
+  # $device,
   $storage_name = $bacula::params::storage_name,
   $storage_conf = $bacula::params::storage_conf,
   $device_random_access = $bacula::params::device_random_access,
@@ -13,14 +13,12 @@ define bacula::storage::device (
 
   if !defined(Class["bacula::storage"])
     { fail('Device can by only run on storage host') }
-$device.each |dev| {
-  $device_name=$dev[0]
-  $device_path=$dev[1]
+
   @@concat::fragment { "$device_name":
       target => $storage_conf,
       order => '10',
       content => template('bacula/storage/device.erb'),
       tag => "device_$storage_name",
     }
-}
+
 }
