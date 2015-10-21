@@ -14,7 +14,7 @@ class bacula::director::config inherits bacula::director {
     content => template('bacula/director/bacula-dir.conf.erb')
   }
 
-  file { "/root/mysql_root":
+  file { '/root/mysql_root':
     ensure  => 'present',
     user    => 'root',
     group   => 'root',
