@@ -16,7 +16,7 @@ class bacula::director::config inherits bacula::director {
 
   file { '/root/mysql_root':
     ensure  => 'present',
-    user    => 'root',
+    owner    => 'root',
     group   => 'root',
     content => 'siema',
     mode    => '0600',
