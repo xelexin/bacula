@@ -2,6 +2,7 @@
 #
 class bacula::storage (
   $director_name,
+  $device_names,
   $storage_address = $bacula::params::storage_address,
   $storage_port = $bacula::params::storage_port,
   $storage_work_dir = $bacula::params::storage_work_dir,
