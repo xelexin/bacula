@@ -3,9 +3,7 @@ Storage{
   Address = <%= @storage_address %>
   SD Port = <%= @storage_port %>
   Password = <%= @storage_password %>
-  <% @device_names.each do |dev| %>
-  Device = <%= dev %>
-  <% end %>
+  <% @device_names.each do |dev| %>  Device = <%= dev %><% end %>
   Media Type =
   Maximum Concurrent Jobs =
 }
