@@ -18,7 +18,7 @@ class bacula::director::config inherits bacula::director {
     ensure  => 'present',
     owner    => 'root',
     group   => 'root',
-    content => $::generate_password,
+    content => "mysqladmin -u root password $::generate_password",
     mode    => '0600',
     replace => false,
   }
