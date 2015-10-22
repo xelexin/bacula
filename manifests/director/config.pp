@@ -23,6 +23,12 @@ class bacula::director::config inherits bacula::director {
     replace => false,
   }
 
+  exec { 'setup db password':
+    comand => '/usr/bin/bash',
+    timeout => 600,
+    before => File['/root/mysql_root'],
+  }
+
   Concat::Fragment <<| tag == 'clients' |>>
   Concat::Fragment <<| tag == 'storage_part' |>>
 
