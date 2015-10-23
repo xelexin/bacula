@@ -25,9 +25,8 @@ class bacula::director::config inherits bacula::director {
   }
   $bacula_db_password = $::generate_password
   exec { 'setup bacula db password':
-    command => "/usr/bin/mysql -u root -e \"grant all privileges on bacula.* to bacula@localhost identified by $bacula_db_password;\" ",
+    command => "/usr/bin/mysql -u root -w $root_db_password -e \"grant all privileges on bacula.* to bacula@localhost identified by $bacula_db_password;\" ",
     timeout => 600,
-    before => file['/root/mysql_root'],
   }
 
   exec { 'setup root db password':
