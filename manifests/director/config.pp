@@ -18,7 +18,7 @@ class bacula::director::config inherits bacula::director {
     timeout => 600,
   }
   exec { 'setup root db password':
-    command => "/usr/bin/mysqladmin -u root -w $root_db_password password $root_db_password",
+    command => "/usr/bin/mysqladmin -u root -p $root_db_password password $root_db_password",
     unless => "/usr/bin/mysqladmin -u root password $root_db_password",
     timeout => 600,
     before => exec['setup bacula db password'],
