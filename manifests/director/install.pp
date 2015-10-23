@@ -6,5 +6,6 @@ class bacula::director::install inherits bacula::director{
     name => $director_package,
     before => Class['bacula::director::config'],
   }
+  
 
 }
