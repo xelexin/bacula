@@ -7,7 +7,6 @@ class bacula::client (
   $client_work_dir = $bacula::params::client_work_dir,
   $client_pid_dir = $bacula::params::client_pid_dir,
   $client_max_jobs = $bacula::params::client_max_jobs,
-
   $client_name = $bacula::params::client_name,
   $client_package = $bacula::params::client_package,
   $client_conf = $bacula::params::client_conf,
