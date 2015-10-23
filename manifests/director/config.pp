@@ -13,25 +13,14 @@ class bacula::director::config inherits bacula::director {
     mode    => '0644',
     content => template('bacula/director/bacula-dir.conf.erb'),
   }
-  $root_db_password = $::generate_password
-  file { '/root/mysql_root':
-    ensure  => 'present',
-    owner    => 'root',
-    group   => 'root',
-    content => "mysqladmin -u root password $root_db_password \n",
-    mode    => '0600',
-    replace => false,
-    before => exec['setup root db password'],
-  }
-  $bacula_db_password = $::generate_password
   exec { 'setup bacula db password':
     command => "/usr/bin/mysql -u root -w $root_db_password -e \"grant all privileges on bacula.* to bacula@localhost identified by $bacula_db_password;\" ",
     timeout => 600,
   }
-
   exec { 'setup root db password':
-    command => '/bin/bash',
+    command => "/usr/bin/mysqladmin -u root password $root_db_password",
     timeout => 600,
+    before => exec['setup bacula db password'],
   }
 
   concat::fragment { 'director_catalog':
