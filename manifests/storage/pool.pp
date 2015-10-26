@@ -1,5 +1,3 @@
-# == Class: bacula::storage::pool
-#
 define bacula::storage::pool (
   $storage_name,
   $pool_name,
