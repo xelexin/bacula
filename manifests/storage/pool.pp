@@ -1,6 +1,6 @@
-# == Class: bacula::director::pool
+# == Class: bacula::storage::pool
 #
-class bacula::director::pool (
+class bacula::storage::pool (
   $storage_name,
   $pool_name,
   $pool_recycle = $bacula::params::pool_recycle,
