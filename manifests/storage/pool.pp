@@ -10,7 +10,7 @@ define bacula::storage::pool (
   $pool_recycle_oldest_vol = $bacula::params::pool_recycle_oldest_vol,
   $pool_label_vol = $bacula::params::pool_label_vol,
 
-  ) inherits bacula::params {
+  ) {
   @@concat::fragment{ "$pool_name-pool":
     target  => $director_conf,
     order   => '10',
