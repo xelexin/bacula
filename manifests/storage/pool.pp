@@ -1,5 +1,4 @@
 define bacula::storage::pool (
-  $storage_name,
   $pool_name,
   $pool_recycle = $bacula::params::pool_recycle,
   $pool_auto_prune = $bacula::params::pool_auto_prune,
@@ -8,6 +7,7 @@ define bacula::storage::pool (
   $pool_recycle_oldest_vol = $bacula::params::pool_recycle_oldest_vol,
   $pool_label_vol = $bacula::params::pool_label_vol,
 
+  $storage_name = $bacula::params::storage_name,
   ) {
   @@concat::fragment{ "$pool_name-pool":
     target  => $bacula::params::director_conf,
