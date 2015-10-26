@@ -8,7 +8,7 @@ define bacula::client::backup (
   ) {
 #    @@concat::fragment{"$::hostname-$backup_level-$backup_files-fs":
     @@concat::fragment{"asdgasdasdasfkamsdlafs":
-      target  => $director_conf,
+      target  => '/etc/bacula/bacula-dir.conf',
       order   => '10',
       content => template('bacula/client/fileset.erb'),
       tag     => 'filesets',
