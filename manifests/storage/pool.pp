@@ -12,7 +12,7 @@ define bacula::storage::pool (
 
   ) {
   @@concat::fragment{ "$pool_name-pool":
-    target  => $director_conf,
+    target  => $bacula::params::director_conf,
     order   => '10',
     content => template['bacula/storage[]/pool.erb'],
     tag     => 'pools',
