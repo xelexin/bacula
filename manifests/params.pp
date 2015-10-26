@@ -57,6 +57,9 @@ class bacula::params {
       $pool_max_vol_bytes = "512MB"
       $pool_recycle_oldest_vol = "yes"
       $pool_label_vol = "Vol-$::hostname-"
+
+      #backup params
+      $backup_level = "Full"
     }
     default: {
       fail("Unsupported platform")

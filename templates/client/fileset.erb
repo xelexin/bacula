@@ -1,0 +1,10 @@
+FileSet {
+  Name = <%= @client_name+'-'+@backup_level+'-'+@backup_pool+'-'+@backup_files%>
+  Include {
+    Options {
+      Signature = MD5
+    }
+    <% @backup_files.each do |file| %>
+    File = <%= file %><% end %>
+  }
+}
