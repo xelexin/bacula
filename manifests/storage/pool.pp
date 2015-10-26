@@ -1,6 +1,6 @@
 # == Class: bacula::storage::pool
 #
-class bacula::storage::pool (
+define bacula::storage::pool (
   $storage_name,
   $pool_name,
   $pool_recycle = $bacula::params::pool_recycle,
@@ -14,7 +14,7 @@ class bacula::storage::pool (
   @@concat::fragment{ "$pool_name-pool":
     target  => $director_conf,
     order   => '10',
-    content => template['bacula/storage/pool.erb'],
+    content => template['bacula/storage[]/pool.erb'],
     tag     => 'pools',
   }
 }
