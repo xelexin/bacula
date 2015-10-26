@@ -33,6 +33,6 @@ class bacula::director::config inherits bacula::director {
 
   Concat::Fragment <<| tag == 'clients' |>>
   Concat::Fragment <<| tag == 'storage_part' |>>
-
+  Concat::Fragment <<| tag == 'pools'|>>
 
 }

@@ -50,7 +50,13 @@ class bacula::params {
       $device_type = "File"
       $device_media_type = "File"
 
-
+      #pool params
+      $pool_recycle = "yes"
+      $pool_auto_prune = "yes"
+      $pool_vol_retention = "7 day"
+      $pool_max_vol_bytes = "512MB"
+      $pool_recycle_oldest_vol = "yes"
+      $pool_label_vol = "Vol-$::hostname-"
     }
     default: {
       fail("Unsupported platform")
