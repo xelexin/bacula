@@ -18,7 +18,7 @@ define bacula::client::backup (
     }
 
     $backup_schedule_name_temp = "${::hostname}-${backup_level}-${backup_files}-${backup_run_options}-schedule"
-    $backup_schedule_name = regsubst($backup_fs_schedule_temp,'/','_','G')
+    $backup_schedule_name = regsubst($backup_schedule_name_temp,'/','_','G')
     @@concat::fragment{"$::hostname-$backup_level-$backup_files-schedule":
       target => $bacula::params::director_conf,
       order => '10',
