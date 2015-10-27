@@ -7,8 +7,8 @@ define bacula::client::backup (
   $backup_level = $bacula::params::backup_level,
   ) {
 
-    $backup_fs_name = "${::hostname}-${backup_level}-${backup_files}-${backup_run_options}-fileset"
-    $backup_fs_name = regsubst($backup_fs_name,'/','_','G')
+    $backup_fs_name_temp = "${::hostname}-${backup_level}-${backup_files}-${backup_run_options}-fileset"
+    $backup_fs_name = regsubst($backup_fs_name_temp,'/','_','G')
 
     @@concat::fragment{"$::hostname-$backup_level-$backup_files-fs":
       target  => $bacula::params::director_conf,
