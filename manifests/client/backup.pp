@@ -6,6 +6,9 @@ define bacula::client::backup (
   $backup_pool,
   $backup_level = $bacula::params::backup_level,
   ) {
+
+    $backup_fs_name = "${client_name}-${backup_level}"
+
     @@concat::fragment{"$::hostname-$backup_level-$backup_files-fs":
       target  => $bacula::params::director_conf,
       order   => '10',

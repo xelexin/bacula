@@ -1,6 +1,5 @@
 FileSet {
-#  Name = <%= '@client_name-@backup_level-@backup_pool-@backup_files' %>
-Name = <% puts(@client_name) %>
+Name = <%= @backup_fs_name %>
   Include {
     Options {
       Signature = MD5
