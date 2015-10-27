@@ -1,6 +1,11 @@
 # == Class: bacula::storage::config
 #
 class bacula::storage::config inherits bacula::storage {
+  file {"$storage_work_dir":
+    ensure => "directory",
+  }
+
+
   concat { $storage_conf:
     owner => 'root',
     group => 'root',

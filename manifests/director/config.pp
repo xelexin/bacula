@@ -1,6 +1,11 @@
 # == Class: bacula::director::config
 #
 class bacula::director::config inherits bacula::director {
+  file {"$director_work_dir":
+    ensure => "directory",
+  }
+
+
   concat { $director_conf:
     owner => 'root',
     group => 'root',
