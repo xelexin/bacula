@@ -25,7 +25,7 @@ class bacula::params {
       $director_work_dir = '/var/lib/bacula/working'
       $director_pid_dir = '/var/run'
       $director_max_jobs = '5'
-      $director_messages_name = 'DirMessaages'
+      $director_messages_name = 'DirMessages'
       $director_logtofile = 'true'
 
       #storage params
