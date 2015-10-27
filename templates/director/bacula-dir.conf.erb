@@ -12,10 +12,8 @@ Director {
   QueryFile = /etc/bacula/scripts
 }
 
-<% if @director_logtofile == true %>
 Messages {
   Name = <%= @director_messages_name %>
   Console = all, !skipped, !saved
   Append = "/var/log/bacula-dir.log" = all, !skipped, !saved
 }
-<% end %>

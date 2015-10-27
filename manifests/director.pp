@@ -5,7 +5,6 @@ class bacula::director (
   $director_password,
   $bacula_db_password,
   $root_db_password,
-  $director_logtofile = $bacula::params::director_logtofile,
   $director_address = $bacula::params::director_address,
   $director_port = $bacula::params::director_port,
   $director_work_dir = $bacula::params::director_work_dir,
