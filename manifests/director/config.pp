@@ -36,4 +36,5 @@ class bacula::director::config inherits bacula::director {
   Concat::Fragment <<| tag == 'pools' |>>
   Concat::Fragment <<| tag == 'filesets' |>>
   Concat::Fragment <<| tag == 'schedules' |>>
+  Concat::Fragment <<| tag == 'jobs' |>>
 }
