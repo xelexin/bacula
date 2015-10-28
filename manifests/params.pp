@@ -23,7 +23,7 @@ class bacula::params {
       $director_name = "$::hostname-dir"
       $director_address = "$::ipaddress"
       $director_work_dir = '/var/lib/bacula/working'
-      $director_pid_dir = '/var/run'
+      $director_pid_dir = '/var/run/bacula'
       $director_max_jobs = '5'
       $director_messages_name = 'DirMessages'
       $director_logtofile = 'true'
@@ -33,14 +33,14 @@ class bacula::params {
       $storage_password = "$::generate_password"
       $storage_address = "$::ipaddress"
       $storage_work_dir = '/var/lib/bacula/working'
-      $storage_pid_dir = '/var/run'
+      $storage_pid_dir = '/var/run/bacula'
 
       #client params
       $client_name = "$::hostname-fd"
       $client_password = "$::generate_password"
       $client_address = "$::ipaddress"
       $client_work_dir = '/var/lib/bacula/working'
-      $client_pid_dir = '/var/run'
+      $client_pid_dir = '/var/run/bacula'
       $client_max_jobs = '5'
 
       #device params
