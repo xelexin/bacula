@@ -4,6 +4,8 @@ class bacula::client::config inherits bacula::client {
 
   file {"$client_work_dir":
     ensure => "directory",
+      owner => 'root',
+      group => 'root',
   }
 
   concat { $client_conf:
