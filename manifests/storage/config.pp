@@ -3,6 +3,8 @@
 class bacula::storage::config inherits bacula::storage {
   file {"$storage_work_dir":
     ensure => "directory",
+      owner => 'bacula',
+      group => 'bacula',
   }
 
 
