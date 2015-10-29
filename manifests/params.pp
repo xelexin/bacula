@@ -13,7 +13,7 @@ class bacula::params {
       #packages
       $director_package = 'bacula-director-mysql'
       $storage_package = 'bacula-sd'
-      $client_package ='bacula-fd'
+      $client_package ='bacula-client'
 
       $director_port = 9101
       $client_port = 9102
