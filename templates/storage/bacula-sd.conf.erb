@@ -2,14 +2,14 @@ Storage {
   Name = <%= @storage_name %>
   Working Directory = <%= @storage_work_dir %>
   PID Directory = <%= @storage_pid_dir %>
-  SD Address = <%= @storage_address %>
-  SD Port = <%= @storage_port %>
+  SDAddress = <%= @storage_address %>
+  SDPort = <%= @storage_port %>
   Maximum Concurrent Jobs = 5
 }
 
 Director {
   Name = <%= @director_name %>
-  Password = "<%= @storage_password %>"
+  Password = <%= @storage_password %>
 }
 
 Messages {
