@@ -9,8 +9,8 @@ class bacula::director::config inherits bacula::director {
 
 
   concat { $director_conf:
-    owner => 'root',
-    group => 'root',
+    owner => 'bacula',
+    group => 'bacula',
     mode  => '0644',
   }
 

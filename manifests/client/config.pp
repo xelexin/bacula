@@ -9,8 +9,8 @@ class bacula::client::config inherits bacula::client {
   }
 
   concat { $client_conf:
-    owner => 'root',
-    group => 'root',
+    owner => 'bacula',
+    group => 'bacula',
     mode => '0644',
   }
 
