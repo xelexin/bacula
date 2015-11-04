@@ -11,7 +11,7 @@ class bacula::storage::config inherits bacula::storage {
   concat { $storage_conf:
     owner => 'bacula',
     group => 'bacula',
-    mode => '0644',,
+    mode => '0644',
     ensure_newline => 'true',
   }
 
