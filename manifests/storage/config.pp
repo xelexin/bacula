@@ -12,7 +12,7 @@ class bacula::storage::config inherits bacula::storage {
     owner => 'bacula',
     group => 'bacula',
     mode => '0644',
-    ensure_newline => 'true',
+    ensure_newline => true,
   }
 
   concat::fragment { 'storage_conf_main':

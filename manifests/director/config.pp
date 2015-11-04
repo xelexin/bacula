@@ -12,7 +12,7 @@ class bacula::director::config inherits bacula::director {
     owner => 'bacula',
     group => 'bacula',
     mode  => '0644',,
-    ensure_newline => 'true',
+    ensure_newline => true,
   }
 
   concat::fragment { 'director_conf_main':
