@@ -18,7 +18,8 @@ class bacula::client::config inherits bacula::client {
     target  => $client_conf,
     order   => '01',
     mode    => '0644',
-    content => template('bacula/client/bacula-fd.conf.erb')
+    content => template('bacula/client/bacula-fd.conf.erb'),
+    ensure_newline => 'true',
   }
 
 

@@ -11,7 +11,8 @@ class bacula::director::config inherits bacula::director {
   concat { $director_conf:
     owner => 'bacula',
     group => 'bacula',
-    mode  => '0644',
+    mode  => '0644',,
+    ensure_newline => 'true',
   }
 
   concat::fragment { 'director_conf_main':
