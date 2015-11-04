@@ -2,7 +2,7 @@ FileSet {
 Name = <%= @backup_fs_name %>
   Include {
     Options {
-      Signature = MD5
+      Signature = SHA1
     }
     <% @backup_files.each do |file| %>
     File = <%= file %><% end %>
